@@ -1,0 +1,275 @@
+
+/* Esto crea una variable para asignar los colores más facil más abajo */
+
+:root {
+--negro: #2b2d42;
+--gris: #8d99ae;
+--verde: #35ce8d;
+--blanco: #ffffff;
+
+}
+
+* {
+  font-family: 'Dosis', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+background: #f2709c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ff9472, #f2709c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  width: 100%;
+  background: var(--negro);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  align-items: center;
+
+}
+
+.logo {
+  color: var(--blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo h2 {
+  font-size: 50px;
+}
+
+.logo p {
+  font-size: 20px;
+  color: var(--verde);
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.ham {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+
+}
+
+.contenedor-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-2 a {
+  text-decoration: none;
+  color: var(--blanco);
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+/* Lineas css del menu de hamburguesa */
+
+.linea1 {
+  width: 50px;
+  height: 5px;
+  margin-bottom: 5px;
+  background: var(--blanco);
+  transition: all 0.5s ease;
+
+}
+.linea2 {
+  width: 60px;
+  height: 5px;
+  margin-bottom: 5px;
+  background: var(--blanco);
+  transition: all 0.5s ease;
+
+}
+.linea3 {
+  width: 50px;
+  height: 5px;
+  background: var(--blanco);
+  transition: all 0.5s ease;
+
+}
+
+.linea1.active {
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.linea2.active {
+    display: none;
+}
+
+.linea3.active {
+  transform: rotate(-45deg);
+  margin-top: -10px;
+  transition: all 0.5s ease;
+
+}
+
+
+.enlaces {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  margin-top: 80px;
+  width: 600px;
+  height: 100%;
+  transition: all 0.5s ease;
+
+}
+
+.item-enlace {
+  width: 100%;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.item-enlace-solo {
+  width: 100%;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.item-titulo-solo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--negro);
+}
+
+.item-titulo-solo p {
+  font-size: 30px;
+  color: var(--blanco);
+}
+
+.item-titulo {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blanco);
+}
+
+.item-titulo p {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.icono-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--verde);
+  width: 30%;
+  height: 100%;
+}
+
+.icono-item img {
+  width: 60px;
+}
+
+.icono-item2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fde74c;
+  width: 30%;
+  height: 100%;
+}
+
+.icono-item2 img {
+  width: 60px;
+}
+
+
+/*FIN NAVEGACION*/
+
+.banner-header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.banner-header img {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  min-width: 1000px;
+  position: absolute;
+
+}
+
+.banner-texto {
+  width: 400px;
+  position: absolute;
+  border-radius: 0px 20px 20px 0px;
+  padding: 20px;
+  padding-top: 0px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--negro);
+  left: 0;
+  top: 550px;
+
+}
+
+/*BOTON*/
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+
+}
+  button {
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    background: var(--verde);
+    color: var(--negro);
+    font-size: 20px;
+  }
+
+
+/*FIN BOTON*/
+
+.banner-texto p {
+  font-size: 30px;
+  text-align: center;
+  color: var(--blanco);
+}

@@ -1,0 +1,306 @@
+
+/* Esto crea una variable para asignar los colores más facil más abajo */
+
+:root {
+--negro: #2b2d42;
+--gris: #8d99ae;
+--verde: #35ce8d;
+--blanco: #ffffff;
+
+}
+
+* {
+  font-family: 'Dosis', sans-serif;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+background: #f2709c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ff9472, #f2709c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  width: 100%;
+  background: var(--negro);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.logo {
+  color: var(--blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo h2 {
+  font-size: 50px;
+}
+
+.logo p {
+  font-size: 20px;
+  color: var(--verde);
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.ham {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+
+}
+
+.contenedor-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-2 a {
+  text-decoration: none;
+  color: var(--blanco);
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+/* Lineas css del menu de hamburguesa */
+
+.linea1 {
+  width: 50px;
+  height: 5px;
+  margin-bottom: 5px;
+  background: var(--blanco);
+  transition: all 0.5s ease;
+
+}
+.linea2 {
+  width: 60px;
+  height: 5px;
+  margin-bottom: 5px;
+  background: var(--blanco);
+  transition: all 0.5s ease;
+
+}
+.linea3 {
+  width: 50px;
+  height: 5px;
+  background: var(--blanco);
+  transition: all 0.5s ease;
+
+}
+
+.linea1.active {
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.linea2.active {
+    display: none;
+}
+
+.linea3.active {
+  transform: rotate(-45deg);
+  margin-top: -10px;
+  transition: all 0.5s ease;
+
+}
+
+
+.enlaces {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 80px;
+  width: 600px;
+  height: 100%;
+  transition: all 0.5s ease;
+
+}
+
+.item-enlace {
+  width: 100%;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.item-enlace-solo {
+  width: 100%;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.item-titulo-solo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--negro);
+}
+
+.item-titulo-solo p {
+  font-size: 30px;
+  color: var(--blanco);
+}
+
+.item-titulo {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blanco);
+}
+
+.item-titulo p {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.icono-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--verde);
+  width: 30%;
+  height: 100%;
+}
+
+.icono-item img {
+  width: 60px;
+}
+
+.icono-item2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fde74c;
+  width: 30%;
+  height: 100%;
+}
+
+.icono-item2 img {
+  width: 60px;
+}
+
+/*FIN MENU*/
+
+span {
+  background: var(--verde);
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+}
+
+
+.recomendar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recomendar h2 {
+  width: 70%;
+  font-size: 60px;
+  margin-bottom: 100px;
+  text-align: center;
+
+}
+
+.reir img,
+.llorar img,
+.rato img,
+.historia img,
+.accion img,
+.indignante img,
+.super img,
+.inquietarme img
+ {
+  width: 60px;
+}
+
+.container {
+  width: 97%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 400px;
+}
+
+.reir,
+.llorar,
+.rato ,
+.historia ,
+.accion ,
+.indignante ,
+.super ,
+.inquietarme {
+
+  width: 600px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--negro);
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+
+}
+
+
+
+.reir:hover,
+.llorar:hover,
+.rato:hover ,
+.historia:hover ,
+.accion:hover ,
+.indignante:hover ,
+.super:hover ,
+.inquietarme:hover {
+background: var(--gris);
+
+
+}
+
+
+.reir p,
+.llorar p,
+.rato p,
+.historia p,
+.accion p,
+.indignante p,
+.super p,
+.inquietarme p{
+
+font-size: 40px;
+color: var(--negro);
+
+}
