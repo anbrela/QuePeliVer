@@ -304,3 +304,22 @@ font-size: 40px;
 color: var(--negro);
 
 }
+
+.container-pelis {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.peli-imagen {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.peli-item {
+  width: 33.33%;
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
