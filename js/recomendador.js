@@ -46,7 +46,7 @@ $( document ).ready(function() {
 
     var request = new XMLHttpRequest()
     var api_key = "d611098e2b30fe621e06d63d02723b1c"
-    var with_genres = 35;
+    var with_genres = 0;
     var requestURL = "0";
 
 
@@ -62,45 +62,55 @@ $( document ).ready(function() {
     contenedor2.hide();
 
 
-    pelicula.click(() => {
+    pelicula.click((e) => {
       contenedor1.hide();
       contenedor2.show();
 
-      var requestURL = "https://api.themoviedb.org/3/discover/movie?api_key="
-        + api_key +"&language=es&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=" + with_genres;
+      e.stopPropagation();
 
 
-        // Open a new connection, using the GET request on the URL endpoint
-        request.open('GET', requestURL , true)
+
+        $('#reir').click( () => {
+
+          contenedor2.hide();
+
+          var with_genres = 35;
 
 
-        request.onload = function () {
-          var data = JSON.parse(this.response)
+          var requestURL = "https://api.themoviedb.org/3/discover/movie?api_key="
+            + api_key +"&language=es&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=" + with_genres;
 
-          var j=0;
-          var total = 0;
-          while (total<4) {
-            if ( data.results[j].poster_path != null ) {
-                $('#peli-imagen').append('<div class="peli-item"><img src="https://image.tmdb.org/t/p/w500/' + data.results[j].poster_path + '"/> </div>');
-                total++;
+            // Open a new connection, using the GET request on the URL endpoint
+            request.open('GET', requestURL , true)
+
+
+            request.onload = function () {
+              var data = JSON.parse(this.response)
+
+              var j=0;
+              var total = 0;
+              while (total<4) {
+                if ( data.results[j].poster_path != null ) {
+                    $('#peli-imagen').append('<div class="peli-item"><img src="https://image.tmdb.org/t/p/w500/' + data.results[j].poster_path + '"/> </div>');
+                    total++;
+                }
+                j++;
+              }
             }
-            j++;
-          }
 
 
+            // Send request
+            request.send();
 
 
+                          });
 
 
-        }
+              });
+
+      
 
 
-        // Send request
-        request.send()
-
-
-
-    });
 
 
     serie.click(() => {
