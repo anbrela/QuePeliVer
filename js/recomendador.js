@@ -46,9 +46,8 @@ $( document ).ready(function() {
 
     var request = new XMLHttpRequest()
     var api_key = "d611098e2b30fe621e06d63d02723b1c"
-    var with_genres = 0;
-    var requestURL = "https://api.themoviedb.org/3/discover/movie?api_key="
-      + api_key +"&language=es&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=" + with_genres;
+    var with_genres = 35;
+    var requestURL = "0";
 
 
 
@@ -62,56 +61,91 @@ $( document ).ready(function() {
 
     contenedor2.hide();
 
-    if(pelicula.click()) {
 
-      contenedor2.show();
+    pelicula.click(() => {
       contenedor1.hide();
-
-    }
-
-    if(serie.click()) {
-
       contenedor2.show();
+
+      var requestURL = "https://api.themoviedb.org/3/discover/movie?api_key="
+        + api_key +"&language=es&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=" + with_genres;
+
+
+        // Open a new connection, using the GET request on the URL endpoint
+        request.open('GET', requestURL , true)
+
+
+        request.onload = function () {
+          var data = JSON.parse(this.response)
+
+          var j=0;
+          var total = 0;
+          while (total<4) {
+            if ( data.results[j].poster_path != null ) {
+                $('#peli-imagen').append('<div class="peli-item"><img src="https://image.tmdb.org/t/p/w500/' + data.results[j].poster_path + '"/> </div>');
+                total++;
+            }
+            j++;
+          }
+
+
+
+
+
+
+        }
+
+
+        // Send request
+        request.send()
+
+
+
+    });
+
+
+    serie.click(() => {
       contenedor1.hide();
+      contenedor2.show();
+
       var requestURL = "https://api.themoviedb.org/3/discover/tv?api_key="
-        + api_key +"d611098e2b30fe621e06d63d02723b1c&language=es&sort_by=popularity.desc&timezone=Europe&include_null_first_air_dates=false" + with_genres;
+        + api_key +"&language=es&sort_by=popularity.desc&page=1&timezone=Europe%2FSpain&include_null_first_air_dates=false&with_genres=" + with_genres;
 
 
-    }
-
-    else {
-
-    }
+        // Open a new connection, using the GET request on the URL endpoint
+        request.open('GET', requestURL , true)
 
 
+        request.onload = function () {
+          var data = JSON.parse(this.response)
 
-// Open a new connection, using the GET request on the URL endpoint
-request.open('GET', requestURL , true)
-
-
-request.onload = function () {
-  var data = JSON.parse(this.response)
-
-  var j=0;
-  var total = 0;
-  while (total<4) {
-    if ( data.results[j].poster_path != null ) {
-        $('#peli-imagen').append('<div class="peli-item"><img src="https://image.tmdb.org/t/p/w500/' + data.results[j].poster_path + '"/> </div>');
-        total++;
-    }
-    j++;
-  }
+          var j=0;
+          var total = 0;
+          while (total<4) {
+            if ( data.results[j].poster_path != null ) {
+                $('#peli-imagen').append('<div class="peli-item"><img src="https://image.tmdb.org/t/p/w500/' + data.results[j].poster_path + '"/> </div>');
+                total++;
+            }
+            j++;
+          }
 
 
 
 
 
 
-}
+        }
 
 
-// Send request
-request.send()
+        // Send request
+        request.send()
+
+
+
+    });
+
+
+console.log(requestURL);
+
 
 
 
