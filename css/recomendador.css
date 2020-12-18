@@ -323,3 +323,46 @@ color: var(--negro);
   margin-right: 10px;
   margin-bottom: 10px;
 }
+
+.eleccion {
+  width: 98%;
+  display: flex;
+  justify-content: center;
+}
+
+.pelicula,
+.serie {
+
+  width: 600px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--negro);
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+
+}
+
+.pelicula p,
+.serie p {
+
+font-size: 40px;
+color: var(--negro);
+
+}
+
+.pelicula img,
+.serie img
+ {
+  width: 60px;
+}
+
+.pelicula:hover,
+.serie:hover {
+background: var(--gris);
+
+
+}
